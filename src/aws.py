@@ -30,3 +30,6 @@ def change_aws_ip() -> {str, str}:
         InstanceId=instanceId
     )
     return {new_ip, new_DNS_addr}
+
+def process_aws(server):
+    pass
