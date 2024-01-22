@@ -1,5 +1,4 @@
 # proxy.util   
-VPC Vendors:
 ![AWS](https://img.shields.io/badge/AWS-Supported-yellow)
 ![Azure](https://img.shields.io/badge/Azure-Supported-blue)
 ![DigitalOcean](https://img.shields.io/badge/Digital%20Ocean-In%20Progress-red)
