@@ -19,6 +19,7 @@ def oss_upload_win(servers):
         item["password"] = server["password"]
         item["server_port"] = server["port"]
         item["method"] = server["method"]
+        content["servers"].append(item)
     auth = oss2.Auth(aliyun_oss_conf['access_key'], aliyun_oss_conf['secret_key'])
     bucket = oss2.Bucket(auth, aliyun_oss_conf['endpoint'], aliyun_oss_conf['bucket_name'])
     content = json.dumps(content)
@@ -32,11 +33,13 @@ def oss_upload_win(servers):
 def oss_upload_ios(servers):
     content = ""
     for server in servers:
-        content += "ss://" + convertion_to_base64(server["ip_address"]) + "\n"
+        message = "%s:%s@%s:%s/#%s:%s" % (server["method"], server["password"],
+                    server["ip_address"], server["port"], server["remark"], server["ip_address"])
+        content += "ss://" + convertion_to_base64(message) + "\n"
     auth = oss2.Auth(aliyun_oss_conf['access_key'], aliyun_oss_conf['secret_key'])
     bucket = oss2.Bucket(auth, aliyun_oss_conf['endpoint'], aliyun_oss_conf['bucket_name'])
     temp = tempfile.TemporaryFile()
-    temp.write(content.encode("ascii"))
+    temp.write(convertion_to_base64(content).encode("ascii"))
     temp.seek(0, os.SEEK_SET)
     bucket.put_object(aliyun_oss_conf['url']['ios'], temp)
     print("Successfully uploaded iOS info to OSS!")

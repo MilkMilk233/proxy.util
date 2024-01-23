@@ -1,3 +1,4 @@
+import sys
 from conf.credentials import *
 from src.azure import process_azure
 from src.aws import process_aws
@@ -19,3 +20,4 @@ def main(servers = servers) -> None:
     
 if __name__ == "__main__":
     main()
+    sys.exit(0)
