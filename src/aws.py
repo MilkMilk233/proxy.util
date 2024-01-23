@@ -1,14 +1,12 @@
 import boto3
 
-def acquire_aws_ip():
-    print ("Start acquiring current IP address...")
+def acquire_aws_ip() -> str:
     client = boto3.client('ec2')
     response = client.describe_addresses()
     new_ip = response['Addresses'][0]['PublicIp']
     return new_ip
 
-def change_aws_ip() -> {str, str}:
-    print ("Start changing Elastic IP address...")
+def change_aws_ip() -> str:
     client = boto3.client('ec2')
     response = client.describe_addresses()
     instanceId = response['Addresses'][0]['InstanceId']
@@ -17,8 +15,6 @@ def change_aws_ip() -> {str, str}:
     response = client.allocate_address()
     new_alloc_id = response['AllocationId']
     new_ip = response['PublicIp']
-    temp = new_ip.replace('.','-')
-    new_DNS_addr = "ec2-"+temp+".ap-northeast-1.compute.amazonaws.com"
     response = client.disassociate_address(
         AssociationId=old_asso_id
     )
@@ -29,7 +25,7 @@ def change_aws_ip() -> {str, str}:
         AllocationId=new_alloc_id,
         InstanceId=instanceId
     )
-    return {new_ip, new_DNS_addr}
+    return new_ip
 
-def process_aws(server):
-    pass
+def process_aws(server) -> str:
+    return acquire_aws_ip()

@@ -7,14 +7,15 @@ from utils.aliyun_monitor import update_aliyun_monitor
 def main(servers = servers) -> None:
     for server in servers:
         if server["vendor"] == "aws":
-            server["address"] = process_aws(server)
+            server["ip_address"] = process_aws(server)
         elif server["vendor"] == "azure":
-            server["address"] = process_azure(server)
+            server["ip_address"] = process_azure(server)
         elif server["vendor"] == "digitalocean":
             pass
         else:
             raise Exception("Unknown vendor: %s" % server["vendor"]) 
     oss_upload(servers)
+    update_aliyun_monitor(servers)
     
 if __name__ == "__main__":
     main()
