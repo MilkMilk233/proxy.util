@@ -5,7 +5,7 @@
 
 ## Abstract
 
-A proxy network auto-repair pipeline based on Aliyun.  
+A proxy network auto-repair pipeline deployed on Aliyun FC(ACR).  
 
 ## Setup  
 
