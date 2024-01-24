@@ -15,4 +15,4 @@ A proxy network auto-repair pipeline based on Aliyun.
 4. Create FC with a CMS-SiteMonitor event trigger, executing user-defined initial instruction with docker images.  
 
 ## Flowchart  
-![Flowchart](./flowchart.svg)
+![Flowchart](./flowchart.png)
