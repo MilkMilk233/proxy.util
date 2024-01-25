@@ -1,0 +1,11 @@
+alibabacloud_tea_util-0.3.11.dist-info/INSTALLER,sha256=zuuue4knoyJ-UwPPXg8fezS7VCrXJQrAP7zeNuwvFQg,4
+alibabacloud_tea_util-0.3.11.dist-info/METADATA,sha256=m50wwo902zvMU9EPIepyV8RtoCTRGXnvcYhANne3y8Q,1803
+alibabacloud_tea_util-0.3.11.dist-info/RECORD,,
+alibabacloud_tea_util-0.3.11.dist-info/WHEEL,sha256=g4nMs7d-Xl9-xC9XovUrsDHGXt-FT0E17Yqo92DEfvY,92
+alibabacloud_tea_util-0.3.11.dist-info/top_level.txt,sha256=4-v1E-bE9bLbQAkXqJJSGMZ4C9IMCrLGozlm1O5cHJo,22
+alibabacloud_tea_util/__init__.py,sha256=6nq11JVatMPE3OUhAMmlxmGk3WN6VWrvAnBtf-iNIjw,24
+alibabacloud_tea_util/__pycache__/__init__.cpython-38.pyc,,
+alibabacloud_tea_util/__pycache__/client.cpython-38.pyc,,
+alibabacloud_tea_util/__pycache__/models.cpython-38.pyc,,
+alibabacloud_tea_util/client.py,sha256=KK2LkF0daXevBdst1z2sDUx8fFoDHHi8WGM1yxTL4BQ,13326
+alibabacloud_tea_util/models.py,sha256=Z5OMhMCLb0UBHIotRRrn-WplzgLIYgLVJLjS1TFJbU4,5536
