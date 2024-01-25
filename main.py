@@ -18,6 +18,10 @@ def main(servers = servers) -> None:
     oss_upload(servers)
     update_aliyun_monitor(servers)
     
+def handler(event, context):
+    main()
+    return 'Done!!!'    
+
 if __name__ == "__main__":
     main()
     sys.exit(0)
